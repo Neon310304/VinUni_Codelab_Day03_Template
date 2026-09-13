@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vingroup Travel Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="eyebrow"><span class="status-dot"></span> REACT AGENT / LOCAL</div>
+      <h1>Trợ lý hành trình<br><em>của bạn.</em></h1>
+      <p>Tra chuyến bay, xem thời tiết và nhận gợi ý trang phục từ dữ liệu local.</p>
+      <div class="suggestions">
+        <button data-prompt="Tìm cho tôi chuyến bay từ HAN đi SGN dưới 2 triệu, rồi cho biết thời tiết SGN nên mặc gì?">HAN → SGN <span>↗</span></button>
+        <button data-prompt="Có chuyến bay nào từ HAN đi DAD giá dưới 1.5 triệu không?">HAN → DAD <span>↗</span></button>
+        <button data-prompt="Thời tiết ở Đà Nẵng DAD hiện tại thế nào?">Thời tiết DAD <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="chat-panel">
+      <header class="panel-header">
+        <div>
+          <span class="label">CONVERSATION</span>
+          <h2>Hỏi trợ lý</h2>
+        </div>
+        <span class="local-badge">● LOCAL DATA</span>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message agent-message">
+          <span class="avatar">VA</span>
+          <div class="bubble">Xin chào. Bạn muốn tìm chuyến bay hay xem thời tiết ở đâu?</div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <textarea id="message-input" rows="2" placeholder="Ví dụ: Tìm chuyến bay HAN đi SGN dưới 2 triệu..." aria-label="Câu hỏi"></textarea>
+        <button class="send-button" type="submit" aria-label="Gửi câu hỏi">Gửi <span>↗</span></button>
+      </form>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
